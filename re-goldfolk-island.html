@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>RE: Goldfolk Island</title>
-    <link href="https://fonts.googleapis.com/css?family=Courgette|PT+Mono|Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|PT+Mono|Satisfy|Cousine" rel="stylesheet">
     <style>
       body {
         margin: 20px;
@@ -20,47 +20,151 @@
       .letter {
         font-family: 'Courgette', cursive;
         max-width: 700px;
+        font-size: 1.3em;
+        line-height: 3em;
+      }
+      .letter p {
+        margin-top: 2em;
+        margin-bottom: 2em;
       }
       .quote {
         font-family: 'Satisfy', cursive;
         text-align: center;
         color: rgba(241,241,241,1);
       }
+      .newspaper {
+        font-family: 'Cousine', monospace;
+        transform: rotate(-2deg);
+        background: white;
+        border: 1px solid black;
+        border-radius: 2px;
+        box-shadow: #7d7d7d 5px 5px 20px;
+        padding: 26px;
+      }
+      #spookyImg {
+        display: none;
+      }
     </style>
+    <script type="module">
+      const pitText = document.getElementById('pit');
+      const spookyImg = document.getElementById('spookyImg');
+      const spooked = localStorage.getItem('spooked');
+      const spooker = () => {
+        pitText.removeEventListener('mouseenter', spooker);
+        localStorage.setItem('spooked',  true)
+        spookyImg.style.display = 'block';
+        pitText.style.color = 'black';
+        setTimeout(() => {
+          spookyImg.parentElement.removeChild(spookyImg);
+        }, 200);
+      };
+      if (!spooked) {
+        pitText.addEventListener('mouseenter', spooker);
+        pitText.style.color = '#2a4621';
+      } else {
+        spookyImg.parentElement.removeChild(spookyImg);
+      }
+    </script>
   </head>
   <body>
     <article class="quote">
       <q>The oldest and strongest emotion of mankind is fear.</q>
     </article>
     <article class="email">
-      <h1>RE: Goldfolk Island</h1>
+      <h1>RE: GOLDFOLK ISLAND</h1>
       <p>OPS,</p>
       <p>Forwarded the facts we received directly from the source. Relevant details should be enough to inform decisions for the next dark winter.</p>
+      <p>Contact with the grift shepard remains sparse, keep an eye out for imposters.</p>
       <p>DRTPIL.</p>
-      <p>- Support</p>
+      <p>- An old friend</p>
     </article>
     <hr>
     <article class="letter">
-      <p>Dear	█████ ███████,</p>
+      <p>My Dear	█████ ███████,</p>
       <p>
         You propose a most interesting enquiry!
-        In your search of the histories of Goldfolk island, you have come across a providence indeed!
+        I must say, in your search of the histories of Goldfolk island, you have come across a providence indeed!
       </p>
       <p>
         In my own personal collection of histories,
         in conjunction with what the Miskatonic can afford paints quite
         the complete picture about the events that unfolded during the
-        1790 and 1860 expeditions to Goldfolk, and the gruesome finding therein.
+        <strong>1790 and 1860 expeditions to Goldfolk</strong>, and the gruesome finding therein.
       </p>
       <p>
         I hope you don't mind, but I have already begun to compile my
-        notes into this (and the following several) emails.
+        notes into this (and the following several) letters.
         Forgive me if this is too forward, but it is too rare for me to find somebody
         with such a direct interest in my work!
       </p>
       <p>
-        Starting with the 1970 expedition, we struck quite the fortunate circumstance when
+        Starting with the 179█ expedition, we struck quite the fortunate circumstance when
+        our associates at	███████████████ unearthed the Blackgreave Company's expenses documents,
+        as well as their contracts dating back all the way to the 1700's. Hidden amongst the chaff was
+        the details of their disastrous attempt to establish their coal mine on Golkfolk island.
+      </p>
+      <p>
+        As with the others, it started innocently enough. A forward group of employee was sent alongside
+        some digging equipment via sail. They quickly set upon the first vein, and from their
+        reports, they were quite successful.
+      </p>
+      <p>
+        I have attached a newspaper article snipping that seem relevant.
+      </p>
+      <article class="newspaper">
+        <h3>BLACKGREAVE COAL MINING EXPEDITION DEPARTS TO GOLDFOLK ISLAND</h2>
+        <time>██/██/179█</time>
+        <p>
+          Last tuesday, a party of twenty five men hired by the blackgreave company set out on a voyage
+          to the distant goldfolk island in hopes of striking the coal vein and restoring
+          the blackgreave company to its former glory.
+        </p>
+        <p>
+          Company director █████ █████ does not comment when questions as the what this
+          means regarding the future of the company, after █████████ stepped down regarding
+          his involvement with ████████████ ██████.
+        </p>
+        <p>
 
+        </p>
+      </article>
+      <p>
+        We know that Blackgreave was in some financial trouble, so this expedition was seen as
+        a bit of a gamble. The miners were instructed to work quickly, and without much thought as
+        to safety. When they first discovered the now-infamous <span class="pit" id="pit">goldfolk pit</span>, it was many
+        weeks into their efforts. Even before it had fully awoken, it causes no small amount of
+        trouble for the workers.
+        <img id="spookyImg" width="1000" height="1000" src="https://eyeoncitrus.files.wordpress.com/2014/09/image20.png" />
+      </p>
+      <p>
+        The miners reported visions of ██████ █████ near the pit. Rocks that were though to be stable shifted.
+        Birds, canaries, that they bought to help detect bad pockets of air squawked unceasingly upon entering the mines, rendering them useless.
+        And, interestingly, here we
+        see the first instance of the ████████ █████ █████, which the miners claimed to have hauled
+        out of the pit (reports on this incident are conflicted even amongst the miners themselves).
+      </p>
+      <p>
+        After the first incidents of █████████ and floodings, Blackgreave realized that if they didn't
+        keep a firm grasp on their expedition, they might face bankruptcy. In a very short period
+        of time, they assembled a second group of miners, foreman and enforcers to travel to the
+        island and get it back on track to meet their deadlines.
+      </p>
+      <p>
+        Quite amazingly, the university itself has a copy of the very employment documents of those chosen few on that doomed voyage.
+        How fantastical is that! Unfortunately, they are not a complete set,
+        but the details and insight they give us into the lives of these unfortunate souls is unparalleled!
+      </p>
+      <p>
+        Ah, I am afraid my ink runs dry.
+        I have already sent a runner to the campus to request the documents,
+        and I shall post you immediately copies of these papers once they enter my possession.
+        I am indeed quite grateful to you for the opportunity to indulge in my passions once more.
+      </p>
+      <p>
+        I look forward to receiving your response! Please let me know if your interest endures beyond my long ramblings.
+      </p>
+      <p>
+        Warmest regards, Professor ████████████████.
       </p>
     </article>
   </body>
